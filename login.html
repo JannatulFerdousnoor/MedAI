@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <title>লগইন | MedAI</title>
+    <style>
+        body { font-family: sans-serif; background: linear-gradient(135deg, #4facfe, #00f2fe); height: 100vh; display: flex; align-items: center; justify-content: center; }
+        .login-card { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); width: 350px; text-align: center; }
+        input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 10px; }
+        button { width: 100%; padding: 12px; background: #4facfe; color: white; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; }
+        a { display: block; margin-top: 15px; color: #4facfe; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="login-card">
+        <h2>🔐 ইউজার লগইন</h2>
+        <form method="POST">
+            <input type="text" name="username" placeholder="ইউজারনেম" required>
+            <input type="password" name="password" placeholder="পাসওয়ার্ড" required>
+            <button type="submit">লগইন করুন</button>
+        </form>
+        <a href="/">হোমে ফিরে যান</a>
+    </div>
+</body>
+</html>

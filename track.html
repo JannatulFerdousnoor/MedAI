@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <title>হেলথ ট্র্যাকার | MedAI</title>
+    <style>
+        body { font-family: sans-serif; background: #f4f7f9; padding: 20px; }
+        .nav { margin-bottom: 30px; }
+        .container { max-width: 800px; margin: auto; }
+        .card { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin-bottom: 20px; }
+        input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px; }
+        button { background: #4facfe; color: white; border: none; padding: 12px 25px; border-radius: 8px; cursor: pointer; font-weight: bold; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { padding: 12px; border-bottom: 1px solid #eee; text-align: left; }
+        th { background: #f8f9fa; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav"><a href="/" style="color: #4facfe; text-decoration: none; font-weight: bold;">← হোমে ফিরে যান</a></div>
+        
+        <div class="card">
+            <h2>🩺 ব্লাড প্রেশার ও সুগার ট্র্যাকার</h2>
+            <form method="POST">
+                <input type="text" name="pressure" placeholder="ব্লাড প্রেশার (যেমন: 120/80)" required>
+                <input type="text" name="sugar" placeholder="সুগার লেভেল (যেমন: 6.5 mmol/L)" required>
+                <button type="submit">ডাটা সেভ করুন</button>
+            </form>
+        </div>
+
+        <div class="card">
+            <h3>📊 আপনার হেলথ রেকর্ডস</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>তারিখ</th>
+                        <th>প্রেশার</th>
+                        <th>সুগার</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in records %}
+                    <tr>
+                        <td>{{ row.record_date }}</td>
+                        <td>{{ row.pressure }}</td>
+                        <td>{{ row.sugar }}</td>
+                    </tr>
+                    {% else %}
+                    <tr><td colspan="3" style="text-align: center;">কোনো রেকর্ড নেই</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
